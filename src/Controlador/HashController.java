@@ -33,6 +33,8 @@ public class HashController implements ActionListener{
                     this.VistaPrincipal.txtPais.getText());
             this.VistaPrincipal.txtCodigo.setText("");
             this.VistaPrincipal.txtPais.setText("");
+            this.ModeloLista.ListarDatos();
+            
         }
     }
     

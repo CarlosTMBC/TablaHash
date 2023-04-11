@@ -6,38 +6,36 @@
 package Modelo;
 
 import java.util.HashMap;
+import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author umg
  */
 public class ListaModelo {
-    
+    HashMap MiLista = new HashMap();
     public void IngresarDatos(int codigo,String pais)
     {
-        HashMap MiLista = new HashMap();
-        //Lista nuevaLista= new Lista(codigo, pais);
-        MiLista.put(codigo, pais);
-        MiLista.forEach((clave,valor)->{
-            if(MiLista==null)
-            {
-               System.out.println(clave+" "+valor); 
-               
-            }
-            else 
-            {
-                if(MiLista != MiLista)
+        
+       
+                if(MiLista.containsKey(codigo))
                 {
-                   System.out.println(clave+" "+valor);  
+                    JOptionPane.showMessageDialog(null,"El Pais ya se ingreso");
                 }
                 else
                 {
-                    System.out.println("Ya se Ingreso xd");
+                    MiLista.put(codigo, pais);
+                    JOptionPane.showMessageDialog(null,"Se ha Ingresado " +pais);
                 }
-              
-              
-            }
             
+        
+        
+    }
+    public void ListarDatos(){
+        
+        MiLista.forEach((codigo,valor)->{
+            System.out.println(codigo + " "+ valor);
         });
         
     }
